@@ -1,0 +1,166 @@
+
+@font-face {
+    font-family: IranYekan-Normal;
+    src: url("/public/fonts/IRANYekanRegular.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: IranYekan-Medium;
+    src: url("/public/fonts/IRANYekanMedium.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: IranYekan-Bold;
+    src: url("/public/fonts/IRANYekanExtraBold.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: IranYekan-Black;
+    src: url("/public/fonts/IRANYekanBlack.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: YekanBakh;
+    src: url("/public/fonts/Yekan\ bakh.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: YekanBakh-Medium;
+    src: url("/public/fonts/Yekan\ bakh\ medium.TTF") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: YekanBakh-Bold;
+    src: url("/public/fonts/Yekan\ bakh\ bold.TTF") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: YekanBakh-Fat;
+    src: url("/public/fonts/Yekan\ bakh\ Fat.TTF") format("truetype");
+    font-weight: 400;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: IranYekan-Normal;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    background: #290135 url("/Images/bg.png") no-repeat top center;
+    background-size: cover;
+    padding: 5rem 10rem ;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+}
+.first-section{
+    width: 40%;
+}
+.first-section .logo{
+    width: 100%;
+}
+.first-section .logo img{
+    width: 100%;
+}
+.first-section .neckles{
+    width: 70%;
+}
+.first-section .neckles img{
+    width: 100%;
+}
+.second-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column ;
+    direction: rtl;
+    padding: 2rem 4rem;
+    filter: blur(5);
+}
+.header{
+    font-size: 4rem;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: IranYekan-Black;
+}
+.header span{
+    color: #ffc227;
+    padding-left: 1rem;
+    font-family: IranYekan-Black;
+
+}
+.rools{
+    background-color: rgba(255, 255, 255, 10%);
+    border: 1px solid rgb(114, 114, 114);
+    border-radius: 1rem;
+    padding: 2rem 3rem;
+    filter: blur(5);
+    width: 80%;
+    margin: auto;
+}
+.rools h6{
+    font-size: 1.6rem;
+    color: #ffc227;
+
+}
+.rools ul li{
+    list-style: disc;
+    padding: 0.5rem 1rem 0;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.button{
+    width: 30%;
+    background-image: linear-gradient(to right, #9747ff82, #e8ab2679);
+    text-align: center;
+    border: 1px solid #E8AB26;
+    border-radius: 0.75rem;
+    padding: 0.75rem 0;
+    color: white;
+    margin: 4rem auto 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+.button:hover{
+    box-shadow: inset 0px 0px 35px 0px #252525;
+    transition: all 0.3s;
+}
+
+@media (max-width: 500px) {
+    .container{
+        padding: 10rem 3rem;
+        justify-content: center;
+        height: 100vh;
+    }
+    .first-section{
+        width: 100%;
+    }
+    .second-section{
+        width: 100%;
+        padding: 0rem;
+    }
+    .rools{
+        margin: auto; 
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+    .header{
+        font-size: 2.4rem;
+    }
+    .rools ul li{
+        font-size: 0.9rem;
+        line-height: 2.2;
+        text-align: right;
+        direction: rtl;
+    }
+    .button{
+        width: 100%;
+    }
+}
