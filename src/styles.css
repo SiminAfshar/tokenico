@@ -1,49 +1,46 @@
 
+
 @font-face {
-    font-family: IranYekan-Normal;
-    src: url("/public/fonts/IRANYekanRegular.ttf") format("truetype");
-    font-weight: 400;
+    font-family: Peyda-Regular;
+    src: url("/public/fonts/PeydaFaNum-Regular.ttf") format("truetype");
 }
 @font-face {
-    font-family: IranYekan-Medium;
-    src: url("/public/fonts/IRANYekanMedium.ttf") format("truetype");
-    font-weight: 500;
+    font-family: Peyda-Medium;
+    src: url("/public/fonts/PeydaFaNum-Medium.ttf") format("truetype");
 }
 @font-face {
-    font-family: IranYekan-Bold;
-    src: url("/public/fonts/IRANYekanExtraBold.ttf") format("truetype");
-    font-weight: 600;
+    font-family: Peyda-light;
+    src: url("/public/fonts/PeydaFaNum-Light.ttf") format("truetype");
 }
 @font-face {
-    font-family: IranYekan-Black;
-    src: url("/public/fonts/IRANYekanBlack.ttf") format("truetype");
-    font-weight: 600;
+    font-family: Peyda-thin;
+    src: url("/public/fonts/PeydaFaNum-Thin.ttf") format("truetype");
 }
 @font-face {
-    font-family: YekanBakh;
-    src: url("/public/fonts/Yekan\ bakh.ttf") format("truetype");
-    font-weight: 400;
+    font-family: Peyda-extraLight;
+    src: url("/public/fonts/PeydaFaNum-ExtraLight.ttf") format("truetype");
 }
 @font-face {
-    font-family: YekanBakh-Medium;
-    src: url("/public/fonts/Yekan\ bakh\ medium.TTF") format("truetype");
-    font-weight: 400;
+    font-family: Peyda-bold;
+    src: url("/public/fonts/PeydaFaNum-Bold.ttf") format("truetype");
 }
 @font-face {
-    font-family: YekanBakh-Bold;
-    src: url("/public/fonts/Yekan\ bakh\ bold.TTF") format("truetype");
-    font-weight: 400;
+    font-family: Peyda-semibold;
+    src: url("/public/fonts/PeydaFaNum-SemiBold.ttf") format("truetype");
 }
 @font-face {
-    font-family: YekanBakh-Fat;
-    src: url("/public/fonts/Yekan\ bakh\ Fat.TTF") format("truetype");
-    font-weight: 400;
+    font-family: Peyda-extrabold;
+    src: url("/public/fonts/PeydaFaNum-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+    font-family: Peyda-black;
+    src: url("/public/fonts/PeydaFaNum-Black.ttf") format("truetype");
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: IranYekan-Normal;
+    font-family: Peyda-Regular;
 }
 .container {
     display: flex;
@@ -62,12 +59,14 @@
 }
 .first-section .logo{
     width: 100%;
+    margin-top: -10%;
 }
 .first-section .logo img{
     width: 100%;
 }
 .first-section .neckles{
-    width: 70%;
+    width: 45%;
+    margin-top: -43%;
 }
 .first-section .neckles img{
     width: 100%;
@@ -86,12 +85,12 @@
     font-weight: 900;
     text-align: center;
     margin-bottom: 2rem;
-    font-family: IranYekan-Black;
+    font-family: Peyda-bold;
 }
 .header span{
     color: #ffc227;
     padding-left: 1rem;
-    font-family: IranYekan-Black;
+    font-family: Peyda-bold;
 
 }
 .rools{
@@ -117,9 +116,9 @@
 }
 .button{
     width: 30%;
-    background-image: linear-gradient(to right, #9747ff82, #e8ab2679);
+    background-image: linear-gradient(to right, #ffdc2f, #e8ab26dd);
     text-align: center;
-    border: 1px solid #E8AB26;
+    border: 1px solid #ffeabd;
     border-radius: 0.75rem;
     padding: 0.75rem 0;
     color: white;
@@ -127,10 +126,228 @@
     cursor: pointer;
     transition: all 0.3s;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 .button:hover{
-    box-shadow: inset 0px 0px 35px 0px #252525;
+    box-shadow: inset 0px 0px 35px 0px #ffee01;
     transition: all 0.3s;
+}
+.button img{
+    width: 12%;
+    animation: spin 2s linear infinite; 
+    display: block;
+    /* margin: 0 auto; */
+}
+.button p{
+    font-size: 1.3rem;
+}
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+/* صفحه اصلی */
+.game-page {
+    direction: rtl;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 8rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background: #290135 url("/Images/bg.png") no-repeat top center;
+    background-size: cover;
+}
+.game-page h6{
+    font-size: 0.75rem ;
+    color: white;
+    font-weight: 400;
+}
+.containerBox{
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(12px);
+    padding: 1rem;
+}
+.drop-area{
+    width: 30%;
+}
+/* عکس دختر */
+.girl-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.girl-wrapper img {
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+
+/* باکس دکمه‌ها */
+.buttons {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    
+}
+
+/* فریم و دکمه‌ها */
+.buttons .child {
+    width: 185px;
+    height: 185px;
+    background: url("/Images/realistic-golden-frame-design copy.png") no-repeat center center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* انیمیشن hover */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.buttons .child:hover {
+    transform: scale(1.08) rotate(1deg);
+    /* box-shadow: 0 0 25px rgba(255, 200, 50, 0.6); */
+}
+
+/* آیکون‌ها داخل فریم */
+.buttons .child img {
+    width: 65%;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.buttons .child:hover img {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 10px rgba(255, 180, 0, 0.7));
+}
+/* overlay کل صفحه با blur */
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px); /* بلور کردن پس‌زمینه */
+    background-color: rgba(0,0,0,0.5); /* نیمه شفاف */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  /* پنجره modal */
+  .modal {
+    background: linear-gradient(to right, #ffd900, #ff9900ac);
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: pop-in 0.5s ease-out;
+  }
+  .border{
+    padding: 1rem;
+    border: 2px solid ;
+    border-radius: 0.75rem;
+    border-width: 2px;
+    border-image-source: linear-gradient(45deg, #ffffff, #ffac2e);
+    border-image-slice: 1;
+    border-radius: 0.75rem;
+  }
+  .border h2{
+    color: rgb(255, 255, 255);
+  }
+  .border p{
+    color: #f1f1f1;
+  }
+  /* تصویر مدال */
+  .medal-img {
+    width: 150px;
+    margin-bottom: 1rem;
+    animation: rotate-in 1s ease-out;
+  }
+  
+  /* دکمه */
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.292);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid #ffffff5e;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+  }
+  
+  /* انیمیشن‌ها */
+  @keyframes pop-in {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes rotate-in {
+    0% { transform: rotate(-360deg); opacity: 0; }
+    100% { transform: rotate(0deg); opacity: 1; }
+  }
+  
+/* Mobile */
+@media (max-width: 700px) {
+    .game-page {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .girl-wrapper {
+        width: 90%;
+    }
+
+    .buttons {
+        width: 100%;
+        padding: 1.5rem;
+        gap: 1rem;
+
+
+    }
+
+    .buttons .child {
+        width: 120px;
+        height: 120px;
+    }
+    .containerBox{
+        flex-direction: column;
+        align-items: center;
+    }
+    .drop-area{
+        width: 100%;
+    }
+    .drop-area .girl-wrapper{
+        width: 100%;
+    }
 }
 
 @media (max-width: 500px) {

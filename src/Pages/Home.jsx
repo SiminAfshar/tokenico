@@ -7,7 +7,7 @@ export default function Home() {
         <div className="container">
             <div className="first-section">
                 <div className="logo">
-                    <img src="/Images/logo.png"/>
+                    <img src="/Images/TOKENIKO logo.svg"/>
                 </div>
                 <div className="neckles">
                     <img src="/Images/neckles.png" />
@@ -40,8 +40,8 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="part-two">
-                    <div className="button">
-                        <i></i>
+                    <div className="button" onClick={() => navigate("/game")}>
+                        <img src="/perspective_dice_six_faces_three_removebg_تاس_بدون_بک.svg" />
                         <p>شروع بازی</p>
                     </div>
                 </div>
