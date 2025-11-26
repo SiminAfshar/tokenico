@@ -143,6 +143,7 @@
 }
 .button p{
     font-size: 1.3rem;
+    text-shadow: 2px 2px #a41bce;
 }
 @keyframes spin {
     from {
@@ -292,6 +293,7 @@
     padding: 0.75rem 1.5rem;
     background: rgba(255, 255, 255, 0.292);
     color: #ffffff;
+    text-shadow: 2px 2px #a41bce;
     font-weight: bold;
     border-radius: 0.5rem;
     text-decoration: none;
