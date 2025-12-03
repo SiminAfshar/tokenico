@@ -2,7 +2,7 @@ export default function getGirlImage(selected) {
     const { necklace, earrings, bracelet, ring, neckleswith } = selected;
   
     if (bracelet)
-      return "/Images/model/modeling 1.jpg";
+      return "/images/model/modeling 1.jpg";
   
     if (ring)
       return "/Images/model/modeling 2.jpg";
