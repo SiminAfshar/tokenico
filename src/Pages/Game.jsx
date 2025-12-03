@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import GirlImage from "../Components/GirlImage";
 import JewelryButtons from "../Components/JewelryButtons";
 import WinModal from "../Components/WinModal";
-import getGirlImage from "../utils/getGirlImage";
+import getGirlImage from "../Utils/getGirlImage";
 
 export default function Game() {
 
