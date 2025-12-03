@@ -55,7 +55,7 @@
     justify-content: space-between;
 }
 .first-section{
-    width: 40%;
+    width: 300px;
 }
 .first-section .logo{
     width: 100%;
@@ -66,11 +66,25 @@
 }
 .first-section .neckles{
     width: 45%;
-    margin-top: -43%;
+    margin-top: -29%;
 }
 .first-section .neckles img{
     width: 100%;
 }
+
+.neckles-anim {
+    opacity: 0;
+    transform: translateY(-35px);
+    animation: dropDown 0.9s ease-out forwards;
+  }
+  
+  @keyframes dropDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 .second-section{
     width: 100%;
     display: flex;
@@ -91,7 +105,10 @@
     color: #ffc227;
     padding-left: 1rem;
     font-family: Peyda-bold;
-
+}
+.header p {
+    font-size: 1rem ;
+    height: 10px;
 }
 .rools{
     background-color: rgba(255, 255, 255, 10%);
@@ -116,7 +133,7 @@
 }
 .button{
     width: 30%;
-    background-image: linear-gradient(to right, #ffdc2f, #e8ab26dd);
+    background-image: linear-gradient(to right, #fe745d, #e8ab26dd);
     text-align: center;
     border: 1px solid #ffeabd;
     border-radius: 0.75rem;
@@ -143,7 +160,8 @@
 }
 .button p{
     font-size: 1.3rem;
-    text-shadow: 2px 2px #a41bce;
+    text-shadow: 2px 2px #430d54;
+    color: #ffffff;
 }
 @keyframes spin {
     from {
@@ -158,6 +176,7 @@
     direction: rtl;
     flex-direction: column;
     width: 100%;
+    height: 100vh;
     padding: 3rem 8rem;
     display: flex;
     gap: 2rem;
@@ -182,7 +201,7 @@
     padding: 1rem;
 }
 .drop-area{
-    width: 30%;
+    width: 25%;
 }
 /* عکس دختر */
 .girl-wrapper {
@@ -230,7 +249,7 @@
 
 /* آیکون‌ها داخل فریم */
 .buttons .child img {
-    width: 65%;
+    width: 100%;
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
@@ -241,21 +260,28 @@
 /* overlay کل صفحه با blur */
 .modal-bg {
     position: fixed;
+    inset: 0;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(8px); /* بلور کردن پس‌زمینه */
-    background-color: rgba(0,0,0,0.5); /* نیمه شفاف */
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+    animation: fadeBg 0.4s ease forwards;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999;
   }
+  @keyframes fadeBg {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
   
   /* پنجره modal */
   .modal {
-    background: linear-gradient(to right, #ffd900, #ff9900ac);
+    background: linear-gradient(to right, #ffd900, #ff9900);
     padding: 1rem;
     border-radius: 1rem;
     text-align: center;
@@ -272,28 +298,49 @@
     border-image-source: linear-gradient(45deg, #ffffff, #ffac2e);
     border-image-slice: 1;
     border-radius: 0.75rem;
+    
   }
-  .border h2{
-    color: rgb(255, 255, 255);
+  .border h2, .border h3{
+        color: #430d54;
+        text-shadow: 1px 1px #ededed;
   }
   .border p{
-    color: #f1f1f1;
+    color: #430d54;
+  }
+  .border img.img{
+    width: 30px;
+    animation: rotateIn 0.9s ease forwards;
+    opacity: 0;
+  }
+  @keyframes rotateIn {
+    from { opacity: 0; transform: rotate(-180deg) scale(0.5); }
+    to { opacity: 1; transform: rotate(0) scale(1); }
   }
   /* تصویر مدال */
   .medal-img {
     width: 150px;
     margin-bottom: 1rem;
-    animation: rotate-in 1s ease-out;
+    animation: float 2s ease-in-out infinite;
+    
+  }
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
   }
   
   /* دکمه */
   .btn {
-    display: inline-block;
+    display: flex;
+    width: 55%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.292);
+    background: #430d54;
     color: #ffffff;
-    text-shadow: 2px 2px #a41bce;
+    /* text-shadow: 2px 2px #ffffff; */
     font-weight: bold;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -326,19 +373,26 @@
 
     .girl-wrapper {
         width: 90%;
+        margin: auto;
     }
 
     .buttons {
         width: 100%;
-        padding: 1.5rem;
+        padding: 0.5rem  ;
         gap: 1rem;
 
 
     }
+    .btn{
+        width: 100%;
+    }
 
     .buttons .child {
-        width: 120px;
-        height: 120px;
+        width: 90px;
+        height: 90px;
+    }
+    .buttons .child img {
+        width: 100%;
     }
     .containerBox{
         flex-direction: column;
@@ -348,18 +402,15 @@
         width: 100%;
     }
     .drop-area .girl-wrapper{
-        width: 100%;
+        width: 65%;
     }
-}
-
-@media (max-width: 500px) {
     .container{
         padding: 10rem 3rem;
         justify-content: center;
         height: 100vh;
     }
     .first-section{
-        width: 100%;
+        width: 300px;
     }
     .second-section{
         width: 100%;
@@ -381,5 +432,45 @@
     }
     .button{
         width: 100%;
+    }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 2560px) {
+    .container{
+        height: 100vh;
+        justify-content: center;
+    }
+    .buttons{
+        align-items: center;
+        width: 800px;
+    }
+    .game-page{
+        padding: 4rem;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1500px) {
+    .container{
+        padding: 2rem 0rem;
+        justify-content: center;
+    }
+    .game-page{
+        padding: 2rem;
+    }
+    .container{
+        height: 100vh;
+    }
+    .containerBox{
+        flex-direction: column;
+        align-items: center;
+    }
+    .drop-area{
+        width: 200px;
+    }
+    .buttons{
+        width: 100%;
+    }
+    .buttons .child{
+        width: 130px !important;
     }
 }

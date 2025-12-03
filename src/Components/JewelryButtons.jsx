@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-export default function JewelryButtons({ step, stepsOrder }) {
+export default function JewelryButtons({ step, stepsOrder, onMobileSelect }) {
   const items = [
     { type: "earrings", src: "/Images/icons/1-E.png" },
     { type: "necklace", src: "/Images/icons/ghalamdani.png" },
@@ -9,6 +9,7 @@ export default function JewelryButtons({ step, stepsOrder }) {
     { type: "bracelet", src: "/Images/icons/1-B.png" },
   ];
 
+  const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
   const dragItem = useRef(null);
 
   return (
@@ -20,18 +21,21 @@ export default function JewelryButtons({ step, stepsOrder }) {
           <div key={item.type} className={`child ${!active ? "disabled" : ""}`}>
             <img
               src={item.src}
-              draggable={active}
-              style={{
-                opacity: active ? 1 : 0.4,
-                cursor: active ? "grab" : "not-allowed",
+              draggable={!isMobile && active} // فقط دسکتاپ اجازه درگ دارد
+              onClick={() => {
+                if (isMobile && active) onMobileSelect(item.type);
               }}
               onDragStart={(e) => {
-                if (!active) return;
+                if (isMobile || !active) return; // موبایل خروج
                 e.dataTransfer.setData("type", item.type);
               }}
-              onTouchStart={(e) => {
-                if (!active) return;
-                dragItem.current = item.type;
+              style={{
+                opacity: active ? 1 : 0.4,
+                cursor: active
+                  ? isMobile
+                    ? "pointer"
+                    : "grab"
+                  : "not-allowed",
               }}
             />
           </div>

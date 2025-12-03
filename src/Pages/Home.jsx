@@ -1,22 +1,25 @@
 import { useNavigate } from "react-router-dom";
+import useTypingLoop from "../hooks/typing";
 
 export default function Home() {
     const navigate = useNavigate();
+    const typingText = useTypingLoop("سوتیکو محصول جدید توکنیکو", 80, 40, 700);
 
     return(
         <div className="container">
             <div className="first-section">
                 <div className="logo">
-                    <img src="/Images/TOKENIKO logo.svg"/>
+                    <img src="/Images/new-logo.png"/>
                 </div>
                 <div className="neckles">
-                    <img src="/Images/neckles.png" />
+                    <img className="neckles-anim" src="/Images/neckles.png" />
                 </div>
             </div>
             <div className="second-section">
                 <div className="part-one">
                     <div className="header">
                         <span>طلاتو</span>انتخاب کن
+                        <p className="typing-text">{typingText}</p>
                     </div>
                     <div className="rools">
                         <h6>قوانین</h6>
