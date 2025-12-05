@@ -2,11 +2,11 @@ import { useRef } from "react";
 
 export default function JewelryButtons({ step, stepsOrder, onMobileSelect }) {
   const items = [
-    { type: "earrings", src: "/Images/icons/1-E.png" },
-    { type: "necklace", src: "/Images/icons/ghalamdani.png" },
-    { type: "neckleswith", src: "/Images/icons/1-N copy.png" },
-    { type: "ring", src: "/Images/icons/1-R.png" },
-    { type: "bracelet", src: "/Images/icons/1-B.png" },
+    { type: "earrings", src: "/images/icons/1-E.png" },
+    { type: "necklace", src: "/images/icons/ghalamdani.png" },
+    { type: "neckleswith", src: "/images/icons/1-N copy.png" },
+    { type: "ring", src: "/images/icons/1-R.png" },
+    { type: "bracelet", src: "/images/icons/1-B.png" },
   ];
 
   const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);

@@ -24,12 +24,12 @@ export default function WinModal({ visible }) {
     <div className="modal-bg">
       <div className="modal">
         <div className="border">
-          <img src="/Images/the-girl.png" alt="medal" className="medal-img" />
+          <img src="/images/the-girl.png" alt="medal" className="medal-img" />
           <h2>تبریک !</h2>
           <h3>شماره برنده 2 سوت طلا شدید</h3>
           <a href="https://tokeniko.com/auth/sing-in" className="btn">
             ثبت نام و دریافت جایزه
-            <img className="img" src="/Images/modal-icon.png" />
+            <img className="img" src="/images/modal-icon.png" />
           </a>
         </div>
       </div>

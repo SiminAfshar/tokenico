@@ -23,6 +23,8 @@ export default function Game() {
 
   const dingSound = useRef(null);
   const [firstLoad, setFirstLoad] = useState(true);  // ⬅️ اضافه شد
+  const [flashPart, setFlashPart] = useState(null);
+
 
   useEffect(() => {
     dingSound.current = new Audio("/sounds/drag.wav");
@@ -34,11 +36,15 @@ export default function Game() {
     // ⬅️ فقط وقتی انتخاب واقعی انجام شد، اجازه پخش صدا بده
     setFirstLoad(false);
 
+    setFlashPart(type);
+    setTimeout(() => setFlashPart(null), 300);
+
+
     setSelectedJewelry((prev) => {
       const updated = { ...prev, [type]: true };
 
       if (step + 1 >= stepsOrder.length) {
-        setTimeout(() => setShowWin(true), 500);
+        setTimeout(() => setShowWin(true), 1200);
       } else {
         setStep(step + 1);
       }
@@ -101,7 +107,8 @@ export default function Game() {
           onDragOver={(e) => !isMobile && e.preventDefault()}
           onTouchEnd={handleTouchEnd}
         >
-          <GirlImage src={imageName} />
+          <GirlImage src={imageName} flashPart={flashPart} />
+
         </div>
 
         <JewelryButtons

@@ -9,10 +9,10 @@ export default function Home() {
         <div className="container">
             <div className="first-section">
                 <div className="logo">
-                    <img src="/Images/new-logo.png"/>
+                    <img src="/images/new-logo.png"/>
                 </div>
                 <div className="neckles">
-                    <img className="neckles-anim" src="/Images/neckles.png" />
+                    <img className="neckles-anim" src="/images/neckles.png" />
                 </div>
             </div>
             <div className="second-section">

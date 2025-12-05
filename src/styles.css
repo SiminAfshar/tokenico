@@ -208,6 +208,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .girl-wrapper img {
@@ -215,7 +216,59 @@
     border-radius: 1.5rem;
 }
 
-
+/* افکت برق کلی */
+.flash-effect {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255,255,255,0.8), transparent);
+    animation: flashAnim 0.35s ease-out forwards;
+    border-radius: 50%;
+  }
+  
+  /* ⭐ گوشواره — بالای گوش */
+  .flash-earrings {
+    top: 40px;       /* هر موقع که خواستی تغییر بده */
+    right: 45px;
+  }
+  
+  /* ⭐ گردنبند */
+  .flash-necklace {
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* ⭐ گردنبند کوتاه */
+  .flash-neckleswith {
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* ⭐ حلقه */
+  .flash-ring {
+    bottom: 150px;
+    left: 60px;
+  }
+  
+  /* ⭐ دستبند */
+  .flash-bracelet {
+    bottom: 60px;
+    right: 60px;
+  }
+  
+  @keyframes flashAnim {
+    0% {
+      opacity: 0.8;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.4);
+    }
+  }
 /* باکس دکمه‌ها */
 .buttons {
     width: 60%;
@@ -231,7 +284,7 @@
 .buttons .child {
     width: 185px;
     height: 185px;
-    background: url("/Images/realistic-golden-frame-design copy.png") no-repeat center center;
+    background: url("/images/realistic-golden-frame-design copy.png") no-repeat center center;
     background-size: contain;
     display: flex;
     align-items: center;
@@ -365,14 +418,15 @@
   }
   
 /* Mobile */
-@media (max-width: 700px) {
+@media (max-width: 550px) {
     .game-page {
         flex-direction: column;
         padding: 2rem;
+        /* overflow-y: scroll; */
     }
 
     .girl-wrapper {
-        width: 90%;
+        width: 80%;
         margin: auto;
     }
 
@@ -405,12 +459,13 @@
         width: 65%;
     }
     .container{
-        padding: 10rem 3rem;
+        padding: 1rem;
         justify-content: center;
         height: 100vh;
+        gap: 0;
     }
     .first-section{
-        width: 300px;
+        width: 70%;
     }
     .second-section{
         width: 100%;
@@ -433,33 +488,55 @@
     .button{
         width: 100%;
     }
-}
+    .flash-earrings{
+        top: 0px;
+        right: 0px;
+    }
+    .flash-necklace{
+        top: 70px;
+        right: 30px;
+    }
+    .flash-neckleswith{
+        top: 70px;
+        right: 30px;
+    }
 
-@media screen and (min-width: 1500px) and (max-width: 2560px) {
+    .flash-ring{
+        top: 90px;
+        left: 10px;
+    }
+    .flash-bracelet{
+        bottom: 5px;
+        right: 50px;
+    }
+}
+@media screen and (min-width: 551px) and (max-width: 701px) {
     .container{
-        height: auto;
+        padding: 1rem;
+        height: 100vh;
         justify-content: center;
+        gap: 0;
     }
-    .buttons{
-        align-items: center;
-        width: 800px;
+    .rools{
+        width: 100%;
     }
-    .game-page{
-        padding: 4rem;
+    .button{
+        width: 100%;
     }
 }
 
-@media screen and (min-width: 701px) and (max-width: 1500px) {
+
+
+@media screen and (min-width: 701px) and (max-width: 1023px) {
     .container{
         padding: 2rem 0rem;
         justify-content: center;
+        height: 100vh;
     }
     .game-page{
         padding: 2rem;
     }
-    .container{
-        height: auto;
-    }
+
     .containerBox{
         flex-direction: column;
         align-items: center;
@@ -474,3 +551,39 @@
         width: 130px !important;
     }
 }
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
+    .container{
+        padding: 2rem;
+        /* height: 100vh; */
+    }
+    .rools{
+        width: 80%;
+    }
+    .button{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 1500px) and (max-width: 2560px) {
+    .container{
+        height: auto;
+        justify-content: center;
+        /* height: 100vh; */
+        /* gap: 2rem; */
+        padding: 2rem;
+        gap: 0;
+    }
+    .second-section{ 
+        margin: 0;
+    }
+    .first-section{
+        width: 30%;
+    }
+    .buttons{
+        align-items: center;
+        width: 800px;
+    }
+    .game-page{
+        padding: 4rem;
+    }
+}
+
