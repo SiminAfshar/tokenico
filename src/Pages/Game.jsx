@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import GirlImage from "../Components/GirlImage";
+import JewelryPopup from "../components/JewelryPopup";
 import JewelryButtons from "../Components/JewelryButtons";
 import WinModal from "../Components/WinModal";
 import getGirlImage from "../Utils/getGirlImage";
+
 
 export default function Game() {
 
@@ -16,35 +18,34 @@ export default function Game() {
 
   const [step, setStep] = useState(0);
   const [showWin, setShowWin] = useState(false);
+  const [openPopup, setOpenPopup] = useState(null); 
 
   const stepsOrder = ["earrings", "necklace", "neckleswith", "ring", "bracelet"];
-  const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-  const dragItem = useRef(null);
 
   const dingSound = useRef(null);
-  const [firstLoad, setFirstLoad] = useState(true);  // ⬅️ اضافه شد
+  const [firstLoad, setFirstLoad] = useState(true);
   const [flashPart, setFlashPart] = useState(null);
-
 
   useEffect(() => {
     dingSound.current = new Audio("/sounds/drag.wav");
   }, []);
 
-  function handleSelect(type) {
+  function confirmSelect(type) {
+
+    setOpenPopup(null);
+
     if (type !== stepsOrder[step]) return;
 
-    // ⬅️ فقط وقتی انتخاب واقعی انجام شد، اجازه پخش صدا بده
     setFirstLoad(false);
 
     setFlashPart(type);
     setTimeout(() => setFlashPart(null), 300);
 
-
-    setSelectedJewelry((prev) => {
+    setSelectedJewelry(prev => {
       const updated = { ...prev, [type]: true };
 
       if (step + 1 >= stepsOrder.length) {
-        setTimeout(() => setShowWin(true), 1200);
+        setTimeout(() => setShowWin(true), 1000);
       } else {
         setStep(step + 1);
       }
@@ -53,34 +54,10 @@ export default function Game() {
     });
   }
 
-  function handleDrop(type) {
-    if (!isMobile) handleSelect(type);
-  }
-
-  function handleTouchEnd(e) {
-    if (!isMobile) return;
-
-    const touch = e.changedTouches[0];
-    const dropArea = e.currentTarget.getBoundingClientRect();
-
-    const inside =
-      touch.clientX >= dropArea.left &&
-      touch.clientX <= dropArea.right &&
-      touch.clientY >= dropArea.top &&
-      touch.clientY <= dropArea.bottom;
-
-    if (inside && dragItem.current) {
-      handleSelect(dragItem.current);
-      dragItem.current = null;
-    }
-  }
-
   const imageName = getGirlImage(selectedJewelry);
 
-  // 🎵 فقط بعد از اولین انتخاب صدا پخش می‌شود
   useEffect(() => {
-    if (firstLoad) return; // اولین بار = صدا پخش نکن
-
+    if (firstLoad) return;
     if (dingSound.current) {
       dingSound.current.currentTime = 0;
       dingSound.current.play();
@@ -89,36 +66,30 @@ export default function Game() {
 
   return (
     <div className="game-page">
-      <h6>
-        {isMobile
-          ? " روی زیورآلات کلیک کنید"
-          : " زیورآلات را روی تصویر درگ کنید"}
-      </h6>
+      <h6> روی زیورآلات کلیک کنید </h6>
 
       <div className="containerBox">
-        <div
-          className="drop-area"
-          onDrop={(e) => {
-            if (!isMobile) {
-              const type = e.dataTransfer.getData("type");
-              handleDrop(type);
-            }
-          }}
-          onDragOver={(e) => !isMobile && e.preventDefault()}
-          onTouchEnd={handleTouchEnd}
-        >
-          <GirlImage src={imageName} flashPart={flashPart} />
 
+        <div className="drop-area">
+          <GirlImage src={imageName} flashPart={flashPart} />
         </div>
 
         <JewelryButtons
           step={step}
           stepsOrder={stepsOrder}
-          dragItem={dragItem}
-          onMobileSelect={isMobile ? handleSelect : null}
+          onClickItem={(type) => setOpenPopup(type)}
         />
 
         <WinModal visible={showWin} />
+
+        {openPopup && (
+          <JewelryPopup
+            type={openPopup}
+            onClose={() => setOpenPopup(null)}
+            onSelect={() => confirmSelect(openPopup)}
+          />
+        )}
+
       </div>
     </div>
   );
