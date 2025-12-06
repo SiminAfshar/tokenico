@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import GirlImage from "../Components/GirlImage";
-import JewelryPopup from "../components/JewelryPopup";
+import JewelryPopup from "../Components/JewelryPopup";
 import JewelryButtons from "../Components/JewelryButtons";
 import WinModal from "../Components/WinModal";
 import getGirlImage from "../Utils/getGirlImage";
