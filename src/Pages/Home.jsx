@@ -17,11 +17,12 @@ export default function Home() {
         </div>
         {!isStarted && (
             <div className="neckles">
-            <img className="neckles-anim" src="/Images/neckles.png" />
+              <img className="neckles-anim" src="/Images/neckles.png" />
             </div>
+            <span>طلاتو</span>انتخاب کن
         )}
         <div className="header">
-            <span>طلاتو</span>انتخاب کن
+            
             <p className="typing-text">{typingText}</p>
         </div>
       </div>
