@@ -18,7 +18,9 @@ export default function Home() {
         {!isStarted && (
             <div className="neckles">
               <img className="neckles-anim" src="/Images/neckles.png" />
+              <div>
               <span>طلاتو</span> انتخاب کن
+              </div>
             </div>
             
         )}
