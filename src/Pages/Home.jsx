@@ -13,7 +13,7 @@ export default function Home() {
       {/* بخش ثابت که در هر دو صفحه باشد */}
       <div className="first-section">
         <div className="logo">
-          <img src="/Images/new-logo.png" />
+          <img src="/Images/new-logo2.png" />
         </div>
         {!isStarted && (
             <div className="neckles">
