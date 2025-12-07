@@ -55,7 +55,7 @@
     justify-content: space-between;
 }
 .first-section{
-    width: 300px;
+    width: 500px;
 }
 .first-section .logo{
     width: 100%;
@@ -65,11 +65,11 @@
     width: 100%;
 }
 .first-section .neckles{
-    width: 70%;
+    width: 100%;
     margin-top: -29%;
 }
 .first-section .neckles img{
-    width: 100%;
+    width: 45%;
 }
 
 .neckles-anim {
