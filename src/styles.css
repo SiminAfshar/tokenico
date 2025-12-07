@@ -513,6 +513,9 @@
         justify-content: flex-start;
 
     }
+    .neckles div{
+        font-size:2rem !important;
+    }
 
     .girl-wrapper {
         width: 50%;
