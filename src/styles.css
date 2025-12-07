@@ -59,14 +59,13 @@
 }
 .first-section .logo{
     width: 100%;
-    margin-top: -10%;
 }
 .first-section .logo img{
     width: 100%;
 }
 .first-section .neckles{
     width: 100%;
-    margin-top: -29%;
+    margin-top: -20px;
 }
 .first-section .neckles img{
     width: 45%;
