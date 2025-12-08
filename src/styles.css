@@ -511,7 +511,6 @@
         flex-direction: column;
         padding: 0rem;
         justify-content: flex-start;
-
     }
     .neckles div{
         font-size:2rem !important;
@@ -550,7 +549,6 @@
         justify-content: flex-start;
         min-height: 100vh;
         gap: 3rem;
-        
     }
     .first-section{
         width:70%;
@@ -566,6 +564,7 @@
     }
     .header{
         font-size: 2.4rem;
+        margin-bottom: 0px;
     }
     .rools ul li{
         font-size: 0.9rem;
