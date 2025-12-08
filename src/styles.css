@@ -547,7 +547,7 @@
     }
     .container{
         padding: 1rem;
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
         min-height: 100vh;
         gap: 3rem;
     }
