@@ -47,7 +47,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
-    background: #290135 url("/Images/bg.png") no-repeat top center;
+    background: #290135 url("/Images/bg.webp") no-repeat top center;
     background-size: cover;
     padding: 5rem 10rem ;
     align-items: center;
@@ -291,7 +291,7 @@
 .buttons .child {
     width: 185px;
     height: 185px;
-    background: url("/Images/realistic-golden-frame-design copy.png") no-repeat center center;
+    background: url("/Images/realistic-golden-frame-design copy.webp") no-repeat center center;
     background-size: contain;
     display: flex;
     align-items: center;

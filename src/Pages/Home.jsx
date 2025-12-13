@@ -13,11 +13,11 @@ export default function Home() {
       {/* بخش ثابت که در هر دو صفحه باشد */}
       <div className="first-section">
         <div className="logo">
-          <img src="/Images/new-logo2.png" />
+          <img src="/Images/new-logo2.webp" />
         </div>
         {!isStarted && (
             <div className="neckles">
-              <img className="neckles-anim" src="/Images/neckles.png" />
+              <img className="neckles-anim" src="/Images/neckles.webp" />
               <div>
               <span>طلاتو</span> انتخاب کن
               </div>
