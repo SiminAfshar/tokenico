@@ -6,11 +6,11 @@
 }
 @font-face {
     font-family: Peyda-Medium;
-    src: url("/fonts/PeydaFaNum-Medium.ttf") format("truetype");
+    src: url("/fonts/PeydaFaNum-Medium.woff2") format("woff2");
 }
 @font-face {
     font-family: Peyda-light;
-    src: url("/fonts/PeydaFaNum-Light.ttf") format("truetype");
+    src: url("/fonts/PeydaFaNum-Light.woff2") format("woff2");
 }
 @font-face {
     font-family: Peyda-thin;
@@ -18,23 +18,23 @@
 }
 @font-face {
     font-family: Peyda-extraLight;
-    src: url("/fonts/PeydaFaNum-ExtraLight.ttf") format("truetype");
+    src: url("/fonts/PeydaFaNum-ExtraLight.woff2") format("woff2");
 }
 @font-face {
     font-family: Peyda-bold;
-    src: url("/fonts/PeydaFaNum-Bold.ttf") format("truetype");
+    src: url("/fonts/PeydaFaNum-Bold.woff2") format("woff2");
 }
 @font-face {
     font-family: Peyda-semibold;
-    src: url("/fonts/PeydaFaNum-SemiBold.ttf") format("truetype");
+    src: url("/fonts/PeydaFaNum-SemiBold.woff2") format("woff2");
 }
 @font-face {
     font-family: Peyda-extrabold;
-    src: url("/fonts/PeydaFaNum-ExtraBold.ttf") format("truetype");
+    src: url("/fonts/PeydaFaNum-ExtraBold.woff2") format("woff2");
 }
 @font-face {
     font-family: Peyda-black;
-    src: url("/fonts/PeydaFaNum-Black.ttf") format("truetype");
+    src: url("/fonts/PeydaFaNum-Black.woff2") format("woff2");
 }
 *{
     padding: 0;
